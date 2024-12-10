@@ -6,6 +6,7 @@ import {
   addDoc,
   orderBy,
   Timestamp,
+  limit,
 } from "firebase/firestore"
 
 export async function createPuzzle({ title, body }) {
@@ -16,12 +17,15 @@ export async function createPuzzle({ title, body }) {
 
 export async function fetchScore() {
   const snapshot = await getDocs(
-    query(collection(db, "score"), orderBy("date", "desc"))
+    query(collection(db, "players"), orderBy("date", "desc"), limit(20))
   )
   return snapshot.docs.map((doc) => ({
     id: doc.id,
     ...doc.data(),
   }))
+}
+export async function updateScore(playerID){
+  
 }
 
 export async function fetchPuzzle() {

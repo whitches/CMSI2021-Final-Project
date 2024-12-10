@@ -1,5 +1,5 @@
 import { useState,useEffect } from "react";
-import PuzzleRow from "./puzzleParts/PuzzleRow";
+import PuzzleCell from "./puzzleParts/PuzzleCell";
 
 export default function Puzzle({ board }){
     const [isLoading, setLoading] = useState(false);
@@ -18,16 +18,18 @@ export default function Puzzle({ board }){
 
     const numberLocations = Array.from({ length: 81 }, (_, i) => i);
 
-    const PuzzleCell = ({val}) => {
-        return <div className="cell">{board[Math.floor(val / 9)][val % 9]}</div>;
+  useEffect(() => {
+    if (user) {
+      fetchArticles().then(setArticles)
     }
-
+  }, [user])
+    
     return(
         <div>
         {isLoading ? (<div>loading</div>) :
             <div class="PuzzleBoard">
             {numberLocations.map((numberLocations) => (
-                <PuzzleCell key={numberLocations} val={numberLocations} />
+                <PuzzleCell key={numberLocations} val={board[Math.floor(numberLocations / 9)][numberLocations % 9]} />
             ))}
             </div>
         }

@@ -17,10 +17,32 @@ h2 {
 .cell {
     background-color: rgba(255, 255, 255, 0.8);
     border: 1px solid rgba(0, 0, 0, 0.8);
+    color: black;
     padding: 5px;
-    font-size: 30px;
+    font-size: 50px;
     text-align: center;
     display: inline;
+    width: 80%;
+    min-width: 20px;
+}
+.cell:nth-child(3n){
+    width: 75%;
+}
+.cell:nth-child(even){
+    
+    background-color: rgba(229, 236, 247, 0.8);
+}
+.cell:nth-child(27n),
+.cell:nth-child(27n - 1),
+.cell:nth-child(27n - 2),
+.cell:nth-child(27n - 3),
+.cell:nth-child(27n - 4),
+.cell:nth-child(27n - 5),
+.cell:nth-child(27n - 6),
+.cell:nth-child(27n - 7),
+.cell:nth-child(27n - 8){
+    height: auto;
+    height: 80%;
 }
 
 body {
@@ -30,10 +52,14 @@ body {
     margin: auto;
 }
 
+input.cell {
+    color: rgb(33, 33, 122);
+}
+
 .PuzzleBoard {
     display: inline-grid;
     grid-template-columns: auto auto auto auto auto auto auto auto auto;
-    background-color: #2196F3;
+    background-color: #052641;
     padding: 10px; 
     width: 50%;
     max-height: 80vh;
