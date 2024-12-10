@@ -1,3 +1,3 @@
-# CMSI2021-Final-Project
+# Serene Sudoku
 
-A Sudoku app that lets players save their total completed sudokus through firebase. Code is based on work from [Sitian Liu from Medium](https://medium.com/@sitianliu_57680/building-a-sudoku-game-in-react-ca663915712). To be deployed.
+A Sudoku app that calls the dosuku API and generates a board. Authentication is required before generation, and a refresh button lets the player roll until they find a sudoku they like. Built with Vite, React, and Firebase.
