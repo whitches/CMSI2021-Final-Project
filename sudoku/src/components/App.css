@@ -5,13 +5,16 @@ header {
     color: rgb(0, 0, 0);
     grid-column: 1 / span 2;
     padding: 10px 5px;
+    height: 30px;
 }
 
 h2 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
     display: flex;
     grid-column: 1 / span 2;
-    padding: 10px;
+    font-size: 40px;
+    margin-left: 4cqb;
 }
 
 .cell {
@@ -48,6 +51,9 @@ h2 {
 body {
     color: white;
     background-color: rgb(36, 36, 44);
+    
+    background-image: url("/calm-water-texture.jpg");
+    background-blend-mode: multiply;
     width: 100vw;
     margin: auto;
 }
@@ -56,13 +62,28 @@ input.cell {
     color: rgb(33, 33, 122);
 }
 
+img {
+    max-width: 20vw;
+    margin-top: -40px;
+}
+
+button {
+    max-width: 50vw;
+    margin-top: -5px;
+    height: 40px;
+}
+
+.refresh {
+    max-height: 75px;
+}
+
 .PuzzleBoard {
     display: inline-grid;
     grid-template-columns: auto auto auto auto auto auto auto auto auto;
     background-color: #052641;
     padding: 10px; 
-    width: 50%;
+    width: min(50%, 700px);
     max-height: 80vh;
-    margin-left: 25vw;
+    margin-left: 29vw;
     min-height: 70vh
 }

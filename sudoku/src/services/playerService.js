@@ -8,22 +8,25 @@ import {
   Timestamp,
   limit,
 } from "firebase/firestore"
-
-export async function createPuzzle({ title, body }) {
-  const data = { title, body, date: Timestamp.now() }
-  const docRef = await addDoc(collection(db, "articles"), data)
-  return { id: docRef.id, ...data }
-}
-
-export async function fetchScore() {
+/*export async function fetchScore() {
   const snapshot = await getDocs(
     query(collection(db, "players"), orderBy("date", "desc"), limit(20))
   )
+  console.log(snapshot.docs)
+  console.log("hello")
   return snapshot.docs.map((doc) => ({
     id: doc.id,
     ...doc.data(),
   }))
+}*/
+
+export async function fetchRecent() {
+  const snapshot = await getDocs(
+    query(collection(db, "players"), orderBy("playerId", "playerName"), limit(1))
+  )
+  return snapshot.docs
 }
+
 export async function updateScore(playerID){
   
 }
